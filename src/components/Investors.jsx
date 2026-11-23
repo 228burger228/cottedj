@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import { assetUrl } from '../utils';
 
 export default function Investors() {
   return (
@@ -7,7 +8,7 @@ export default function Investors() {
         <div className="grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div className="relative h-72 md:h-96 rounded-2xl overflow-hidden">
             <img
-              src="/images/Фото · Комплексная застройка поселка.png"
+              src={assetUrl('/images/Фото · Комплексная застройка поселка.png')}
               alt="Комплексная застройка"
               className="w-full h-full object-cover"
             />

@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import { assetUrl } from '../utils';
 
 const DIRS = [
   {
@@ -34,7 +35,7 @@ export default function Directions() {
             <div key={d.num} className="bg-white rounded-2xl overflow-hidden group">
               <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden">
                 <img
-                  src={d.img}
+                  src={assetUrl(d.img)}
                   alt={d.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />

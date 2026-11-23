@@ -1,3 +1,5 @@
+import { assetUrl } from '../utils';
+
 const FACTS = [
   { num: '01', title: 'Опыт с 2012 года', desc: 'Более 140 сданных домов в Московской и Ленинградской областях.' },
   { num: '02', title: 'Собственный технадзор', desc: 'Независимый инженерный контроль на каждом этапе по чек-листу из 84 пунктов.' },
@@ -31,7 +33,7 @@ export default function About() {
         <div className="mt-10 md:mt-14 grid md:grid-cols-2 gap-6">
           <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
             <img
-              src="/images/Фото · Комплексная застройка поселка.png"
+              src={assetUrl('/images/Фото · Комплексная застройка поселка.png')}
               alt="Комплексная застройка"
               className="w-full h-full object-cover"
             />
@@ -43,7 +45,7 @@ export default function About() {
           </div>
           <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
             <img
-              src="/images/Фото · Собственный склад материалов.png"
+              src={assetUrl('/images/Фото · Собственный склад материалов.png')}
               alt="Собственный склад"
               className="w-full h-full object-cover"
             />

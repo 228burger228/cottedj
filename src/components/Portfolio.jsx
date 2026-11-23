@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import { assetUrl } from '../utils';
 
 const WORKS = [
   { title: 'Лесной квартал', meta: '218 м²  ·  Теплая керамика', img: '/images/Объект · Лесной квартал.png' },
@@ -32,14 +33,14 @@ export default function Portfolio() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 md:mt-14">
-          {WORKS.map((w) => (
+          {WORKS.map((w, i) => (
             <a
-              key={w.title}
+              key={w.title + i}
               href="#contact"
               className="group relative h-56 md:h-64 rounded-2xl overflow-hidden block"
             >
               <img
-                src={w.img}
+                src={assetUrl(w.img)}
                 alt={w.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowUpRight, MapPin, Phone } from 'lucide-react';
+import { assetUrl } from '../utils';
 
 const MATERIALS = ['Керамика', 'Газобетон', 'Другой'];
 const LAND = ['Да', 'В процессе подбора'];
@@ -22,11 +23,10 @@ export default function ContactForm() {
           {/* Form card */}
           <div className="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-light-border">
             <div className="flex items-center gap-3 mb-6">
-              <img src="/images/дом.svg" alt="" className="w-10 h-10" />
+              <img src={assetUrl('/images/дом.svg')} alt="" className="w-10 h-10" />
               <h3 className="text-lg font-bold text-forest-dark">Давайте обсудим ваш дом</h3>
             </div>
 
-            {/* Heading */}
             <label className="block text-sm font-semibold text-forest-dark mb-2">Каким будет ваш дом?</label>
 
             {/* Area slider */}
@@ -78,8 +78,7 @@ export default function ContactForm() {
             </div>
 
             {/* Phone */}
-            <label className="block text-xs font-medium text-sage mt-5 mb-2">Будем рады знакомству</label>
-            <label className="block text-xs font-medium text-sage mb-2">Ваш телефон</label>
+            <label className="block text-xs font-medium text-sage mt-5 mb-2">Ваш телефон</label>
             <input
               type="tel"
               value={phone}
@@ -89,7 +88,7 @@ export default function ContactForm() {
             />
 
             {/* Submit */}
-            <button className="flex items-center justify-center gap-2 w-full mt-6 px-6 py-3.5 bg-bronze text-white text-sm font-semibold rounded-lg hover:bg-bronze-light transition-colors">
+            <button className="flex items-center justify-center gap-2 w-full mt-6 px-6 py-3.5 bg-bronze text-white text-sm font-semibold rounded-lg hover:bg-bronze-light transition-colors cursor-pointer">
               Рассчитать смету с детализацией
               <ArrowUpRight size={16} />
             </button>

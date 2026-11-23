@@ -1,4 +1,5 @@
 import { ArrowUpRight, Clock } from 'lucide-react';
+import { assetUrl } from '../utils';
 
 const ARTICLES = [
   {
@@ -45,7 +46,7 @@ export default function Articles() {
             <article key={a.title} className="bg-cream rounded-2xl overflow-hidden group cursor-pointer">
               <div className="h-44 md:h-48 overflow-hidden">
                 <img
-                  src={a.img}
+                  src={assetUrl(a.img)}
                   alt={a.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />

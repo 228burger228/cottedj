@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ArrowUpRight, ArrowDown } from 'lucide-react';
+import { assetUrl } from '../utils';
 
 const CATEGORIES = [
   { label: 'Теплая керамика', count: 'Более 40 проектов' },
@@ -74,7 +75,7 @@ export default function Projects() {
             <div key={house.name} className="bg-cream rounded-2xl overflow-hidden group">
               <div className="relative h-52 md:h-56 overflow-hidden">
                 <img
-                  src={house.img}
+                  src={assetUrl(house.img)}
                   alt={house.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />

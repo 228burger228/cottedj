@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import { assetUrl } from '../utils';
 
 const SECTIONS = [
   {
@@ -40,7 +41,7 @@ export default function Architecture() {
             <div key={s.abbr} className="bg-cream rounded-2xl overflow-hidden group">
               <div className="h-48 md:h-52 overflow-hidden">
                 <img
-                  src={s.img}
+                  src={assetUrl(s.img)}
                   alt={s.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />

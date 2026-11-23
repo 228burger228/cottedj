@@ -1,4 +1,5 @@
 import { ArrowUpRight } from 'lucide-react';
+import { assetUrl } from '../utils';
 
 const FEATURES = [
   { num: '01', title: 'Полный цикл строительства', desc: 'От анализа грунта и проекта до ландшафта и чистовой отделки.' },
@@ -9,17 +10,17 @@ const FEATURES = [
 
 export default function Hero() {
   return (
-    <section className="relative pt-20 md:pt-24 overflow-hidden">
+    <section className="relative overflow-hidden min-h-screen flex items-end">
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('/images/image 3.png')" }}
+          style={{ backgroundImage: `url('${assetUrl('/images/image 3.png')}')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-5 md:px-10 pt-16 md:pt-28 pb-12 md:pb-20">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-5 md:px-10 pt-32 md:pt-40 pb-12 md:pb-20 w-full">
         {/* Main headline */}
         <div className="max-w-2xl">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[56px] font-bold text-white leading-[1.1] tracking-tight">
