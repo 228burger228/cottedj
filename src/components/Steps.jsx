@@ -11,38 +11,38 @@ const STEPS_DATA = [
 
 export default function Steps() {
   return (
-    <section id="steps" className="py-20 sm:py-28 bg-[#F0F0EB]">
-      <div className="max-w-[1600px] mx-auto px-5 sm:px-10 lg:px-20">
-        <p className="text-xs font-bold uppercase tracking-widest text-bronze mb-2.5">
+    <section id="steps" className="py-28 sm:py-36 bg-[#F4F2EE]">
+      <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-16">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7150] mb-3">
           ЭТАПЫ И ГАРАНТИИ
         </p>
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-forest-dark leading-tight max-w-xl">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[#1E2824] leading-tight max-w-xl">
           От первой встречи — до новоселья
         </h2>
-        <p className="text-sage mt-3.5 max-w-xl text-sm sm:text-[15px] leading-relaxed">
+        <p className="text-[#5A6560] mt-3.5 max-w-xl text-sm sm:text-base leading-relaxed">
           Согласовываем детали на каждом этапе. Вы всегда знаете, что происходит на стройке и за что платите.
         </p>
 
-        {/* 6 Steps Grid matching Figma */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 mt-12 sm:mt-16">
+        {/* 6 Steps Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-14 sm:mt-18">
           {STEPS_DATA.map((s, i) => (
             <div
               key={s.num}
-              className="relative bg-white rounded-2xl p-6 sm:p-7 border border-light-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1 group flex flex-col justify-between"
+              className="relative bg-white rounded-3xl p-7 sm:p-9 border border-[#E5E1D8] shadow-[0_6px_25px_rgba(0,0,0,0.03)] hover:shadow-lg transition-all hover:-translate-y-1 group flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className="text-bronze font-black text-2xl tracking-wider">
+                  <span className="text-[#8B7150] font-black text-2xl tracking-wider">
                     {s.num}
                   </span>
                   {i < STEPS_DATA.length - 1 && (
-                    <ArrowRight size={18} className="text-ash/40 group-hover:text-bronze group-hover:translate-x-1 transition-all" />
+                    <ArrowRight size={19} className="text-[#8E9691]/40 group-hover:text-[#8B7150] group-hover:translate-x-1 transition-all" />
                   )}
                 </div>
-                <h3 className="text-forest-dark font-bold text-base sm:text-lg mt-4 leading-snug group-hover:text-bronze transition-colors">
+                <h3 className="text-[#1E2824] font-bold text-lg sm:text-xl mt-5 leading-snug group-hover:text-[#8B7150] transition-colors">
                   {s.title}
                 </h3>
-                <p className="text-sage text-xs sm:text-[13px] mt-2.5 leading-relaxed">
+                <p className="text-[#5A6560] text-xs sm:text-[13px] mt-3 leading-relaxed">
                   {s.desc}
                 </p>
               </div>
@@ -51,28 +51,28 @@ export default function Steps() {
         </div>
 
         {/* Guarantees bar */}
-        <div className="mt-10 sm:mt-12 p-6 sm:p-7 bg-[#28332F] rounded-2xl text-white flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-md border border-[#3A4A40]">
-          <div className="flex items-center gap-3">
-            <div className="p-2.5 bg-bronze/20 rounded-xl text-bronze">
-              <ShieldCheck size={24} />
+        <div className="mt-12 sm:mt-14 p-7 sm:p-9 bg-[#1A2420] rounded-3xl text-white flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 shadow-xl border border-white/10">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-[#8B7150]/20 rounded-2xl text-[#8B7150] shrink-0">
+              <ShieldCheck size={28} />
             </div>
             <div>
-              <span className="font-extrabold text-base sm:text-lg block">25 лет гарантии на конструктив</span>
-              <span className="text-stone/75 text-xs">Юридическая гарантия закреплена в официальном договоре</span>
+              <span className="font-extrabold text-lg sm:text-xl block">25 лет гарантии на конструктив</span>
+              <span className="text-stone-300/80 text-xs sm:text-sm">Юридическая гарантия закреплена в официальном договоре</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 w-full lg:w-auto text-xs sm:text-sm font-semibold text-stone/90 border-t lg:border-t-0 lg:border-l border-white/10 pt-4 lg:pt-0 lg:pl-8">
-            <div className="flex items-center gap-2">
-              <CreditCard size={16} className="text-bronze shrink-0" />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-8 w-full lg:w-auto text-xs sm:text-sm font-semibold text-stone-200 border-t lg:border-t-0 lg:border-l border-white/15 pt-5 lg:pt-0 lg:pl-10">
+            <div className="flex items-center gap-2.5">
+              <CreditCard size={18} className="text-[#8B7150] shrink-0" />
               <span>Поэтапная оплата</span>
             </div>
-            <div className="flex items-center gap-2">
-              <FileCheck2 size={16} className="text-bronze shrink-0" />
+            <div className="flex items-center gap-2.5">
+              <FileCheck2 size={18} className="text-[#8B7150] shrink-0" />
               <span>Акты скрытых работ</span>
             </div>
-            <div className="flex items-center gap-2">
-              <Smartphone size={16} className="text-bronze shrink-0" />
+            <div className="flex items-center gap-2.5">
+              <Smartphone size={18} className="text-[#8B7150] shrink-0" />
               <span>Личный кабинет 24/7</span>
             </div>
           </div>

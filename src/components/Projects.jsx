@@ -148,87 +148,87 @@ export default function Projects({ onOpenFloorPlan, onOpenEstimate }) {
   const projects = ALL_PROJECTS[activeTab] || ALL_PROJECTS.ceramics;
 
   return (
-    <section id="projects" className="py-20 sm:py-28 bg-[#F0F0EB]">
-      <div className="max-w-[1600px] mx-auto px-5 sm:px-10 lg:px-20">
-        <p className="text-xs font-bold uppercase tracking-widest text-bronze mb-2.5">
+    <section id="projects" className="py-24 sm:py-32 bg-[#F4F2EE]">
+      <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-16">
+        <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7150] mb-3">
           НАШИ ПРОЕКТЫ
         </p>
-        <h2 className="text-2xl sm:text-4xl font-extrabold text-forest-dark leading-tight">
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-[#1E2824] leading-tight">
           Найдите свой будущий дом
         </h2>
-        <p className="text-sage mt-2.5 max-w-xl text-xs sm:text-sm leading-relaxed">
+        <p className="text-[#5A6560] mt-3 max-w-xl text-sm sm:text-base leading-relaxed">
           Архитектура, проверенная жизнью. Каждый проект адаптируем под ваш участок.
         </p>
 
-        {/* 5 Category tabs matching Figma dimensions */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mt-10 sm:mt-12">
+        {/* 5 Category tabs */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 mt-12 sm:mt-14">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setActiveTab(cat.id)}
-              className={`p-4 rounded-xl text-left transition-all cursor-pointer border ${
+              className={`p-5 rounded-2xl text-left transition-all duration-300 cursor-pointer border ${
                 activeTab === cat.id
-                  ? 'bg-forest text-white border-forest shadow-md'
-                  : 'bg-[#F9F9F9] text-forest-dark border-light-border hover:bg-white hover:border-bronze/40'
+                  ? 'bg-[#1E2824] text-white border-[#1E2824] shadow-md transform -translate-y-0.5'
+                  : 'bg-white text-[#1E2824] border-[#E5E1D8] hover:border-[#8B7150]/50 hover:shadow-sm'
               }`}
             >
-              <span className="block text-xs sm:text-[13px] font-bold leading-snug">
+              <span className="block text-sm sm:text-[15px] font-bold leading-snug">
                 {cat.label}
               </span>
-              <span className={`block text-[11px] mt-1 ${activeTab === cat.id ? 'text-stone' : 'text-sage'}`}>
+              <span className={`block text-[11px] mt-1.5 font-medium ${activeTab === cat.id ? 'text-stone-300' : 'text-[#8E9691]'}`}>
                 {cat.count}
               </span>
             </button>
           ))}
         </div>
 
-        {/* 3 House Cards — EXACT FIGMA CARD PROPORTIONS & BUTTONS */}
-        <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mt-10 sm:mt-12">
+        {/* 3 House Cards — Luxury Architecture Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mt-12 sm:mt-16">
           {projects.map((house) => (
             <div
               key={house.name}
-              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col border border-light-border group"
+              className="bg-white rounded-[26px] overflow-hidden shadow-[0_10px_35px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_55px_rgba(0,0,0,0.12)] transition-all duration-500 flex flex-col border border-[#E5E1D8] group transform hover:-translate-y-1"
             >
-              <div className="relative h-64 sm:h-72 overflow-hidden">
+              <div className="relative h-64 sm:h-76 overflow-hidden">
                 <img
                   src={assetUrl(house.img)}
                   alt={house.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <span className="absolute top-4 left-4 bg-white/95 text-forest-dark text-xs font-bold px-3 py-1 rounded-md shadow-sm">
+                <span className="absolute top-5 left-5 bg-white/95 backdrop-blur-md text-[#1E2824] text-xs font-extrabold px-3.5 py-1.5 rounded-xl shadow-md border border-black/5">
                   {house.area}
                 </span>
               </div>
 
-              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+              <div className="p-7 sm:p-8 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-forest-dark group-hover:text-bronze transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#1E2824] group-hover:text-[#8B7150] transition-colors leading-snug">
                     {house.name}
                   </h3>
-                  <p className="text-sage text-xs sm:text-[13px] mt-2.5 font-medium">
+                  <p className="text-[#5A6560] text-xs sm:text-[13px] mt-3 font-medium">
                     {house.specs}
                   </p>
-                  <p className="text-sage text-xs sm:text-[13px] mt-0.5">
+                  <p className="text-[#5A6560] text-xs sm:text-[13px] mt-1">
                     {house.feature}
                   </p>
-                  <p className="text-bronze text-xs sm:text-[13px] font-bold mt-2">
+                  <p className="text-[#8B7150] text-xs sm:text-[13px] font-bold mt-3">
                     {house.time}
                   </p>
                 </div>
 
-                <div className="pt-6 mt-6 border-t border-light-border/60 flex flex-col items-center gap-3">
+                <div className="pt-7 mt-7 border-t border-[#E5E1D8]/80 flex flex-col items-center gap-3.5">
                   {/* Primary Solid Bronze Button */}
                   <button
                     onClick={() => onOpenFloorPlan?.(house)}
-                    className="w-full h-[46px] bg-bronze text-white text-xs sm:text-[13px] font-bold rounded-lg hover:bg-bronze-light transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-sm hover:shadow"
+                    className="w-full h-[50px] bg-[#8B7150] hover:bg-[#9E825E] text-white text-xs sm:text-sm font-bold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-[0_6px_20px_rgba(139,113,80,0.25)] hover:shadow-[0_10px_30px_rgba(139,113,80,0.4)]"
                   >
-                    Смотреть планировки <ArrowUpRight size={15} />
+                    Смотреть планировки <ArrowUpRight size={16} />
                   </button>
 
                   {/* Secondary Text Link with Arrow Down */}
                   <button
                     onClick={() => onOpenEstimate?.(house)}
-                    className="text-bronze hover:text-forest-dark text-xs sm:text-[13px] font-bold flex items-center gap-1 transition-colors cursor-pointer py-1"
+                    className="text-[#8B7150] hover:text-[#1E2824] text-xs sm:text-[13px] font-bold flex items-center gap-1.5 transition-colors cursor-pointer py-1"
                   >
                     Скачать смету PDF <ArrowDown size={14} />
                   </button>
@@ -238,7 +238,7 @@ export default function Projects({ onOpenFloorPlan, onOpenEstimate }) {
           ))}
         </div>
 
-        <p className="text-sage text-xs sm:text-sm mt-8 text-center italic">
+        <p className="text-[#8E9691] text-xs sm:text-sm mt-12 text-center italic">
           Все проекты можно адаптировать: изменить планировку, фасады и состав инженерных систем.
         </p>
       </div>

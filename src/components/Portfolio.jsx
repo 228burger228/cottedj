@@ -44,54 +44,54 @@ const WORKS_ROW_2 = [
 
 export default function Portfolio({ onOpenConsultation }) {
   return (
-    <section id="portfolio" className="py-20 sm:py-28 bg-[#F9F9F9]">
-      <div className="max-w-[1600px] mx-auto px-5 sm:px-10 lg:px-20">
+    <section id="portfolio" className="py-28 sm:py-36 bg-[#FBFBFA]">
+      <div className="max-w-[1520px] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-bold uppercase tracking-widest text-bronze mb-2.5">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#8B7150] mb-3">
               ПОРТФОЛИО
             </p>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-forest-dark leading-tight">
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-[#1E2824] leading-tight">
               Дома, в которых начинается новая жизнь
             </h2>
-            <p className="text-sage mt-2 text-xs sm:text-sm">
+            <p className="text-[#5A6560] mt-3 text-sm sm:text-base leading-relaxed">
               Архитектура, материалы и внимание к деталям — в каждом квадратном метре.
             </p>
           </div>
           <button
             onClick={() => onOpenConsultation?.("Каталог всех сданных объектов")}
-            className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-bronze hover:text-forest transition-colors shrink-0 cursor-pointer"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-[#8B7150] hover:text-[#1E2824] transition-colors shrink-0 cursor-pointer"
           >
-            Все объекты <ArrowUpRight size={15} />
+            Все объекты <ArrowUpRight size={16} />
           </button>
         </div>
 
-        {/* Row 1: 3 Cards matching Figma */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-12 sm:mt-14">
-          {WORKS_ROW_1.map((w, i) =>
+        {/* Row 1: 3 Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-14 sm:mt-18">
+          {WORKS_ROW_1.map((w) =>
             w.isPlan ? (
               <div
                 key="plan"
                 onClick={() => onOpenConsultation?.("Заказ индивидуального эскиза плана")}
-                className="bg-[#242E2A] text-white rounded-2xl p-8 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all cursor-pointer border border-[#33403A] group min-h-[260px] sm:min-h-[290px]"
+                className="bg-[#1A2420] text-white rounded-3xl p-8 sm:p-9 flex flex-col justify-between shadow-md hover:shadow-xl transition-all cursor-pointer border border-white/10 group min-h-[280px] sm:min-h-[320px]"
               >
                 <div className="flex justify-between items-start">
-                  <div className="p-3 rounded-xl bg-white/10 text-stone">
-                    <Compass size={24} />
+                  <div className="p-3.5 rounded-2xl bg-white/10 text-stone-200">
+                    <Compass size={26} />
                   </div>
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-bronze border border-bronze/30 px-3 py-1 rounded-md">
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#8B7150] border border-[#8B7150]/30 px-3 py-1 rounded-xl">
                     01 / 02
                   </span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold tracking-wider text-white group-hover:text-stone transition-colors">
+                  <h3 className="text-2xl font-bold tracking-wider text-white group-hover:text-stone-200 transition-colors">
                     {w.title}
                   </h3>
-                  <p className="text-stone/75 text-xs mt-2 leading-relaxed">
+                  <p className="text-stone-300/80 text-xs sm:text-sm mt-2 leading-relaxed">
                     {w.meta}
                   </p>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-bronze mt-4 group-hover:translate-x-1 transition-transform">
-                    Запросить концепцию <ArrowUpRight size={14} />
+                  <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-[#8B7150] mt-5 group-hover:translate-x-1 transition-transform">
+                    Запросить концепцию <ArrowUpRight size={15} />
                   </span>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export default function Portfolio({ onOpenConsultation }) {
               <div
                 key={w.title}
                 onClick={() => onOpenConsultation?.(`Презентация объекта: ${w.title}`)}
-                className="group relative h-64 sm:h-72 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 border border-light-border"
+                className="group relative h-72 sm:h-80 rounded-3xl overflow-hidden cursor-pointer shadow-[0_8px_30px_rgba(0,0,0,0.05)] hover:shadow-2xl transition-all duration-500 border border-[#E5E1D8]"
               >
                 <img
                   src={assetUrl(w.img)}
@@ -107,17 +107,17 @@ export default function Portfolio({ onOpenConsultation }) {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-                <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+                <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                   <div>
-                    <h3 className="text-white font-bold text-base sm:text-lg group-hover:text-stone transition-colors">
+                    <h3 className="text-white font-bold text-lg sm:text-xl group-hover:text-stone-200 transition-colors">
                       {w.title}
                     </h3>
-                    <p className="text-stone/85 text-xs mt-1">
+                    <p className="text-stone-300/90 text-xs mt-1">
                       {w.meta}
                     </p>
                   </div>
-                  <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-bronze transition-colors">
-                    <ArrowUpRight size={15} />
+                  <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-[#8B7150] transition-colors shrink-0">
+                    <ArrowUpRight size={17} />
                   </div>
                 </div>
               </div>
@@ -125,13 +125,13 @@ export default function Portfolio({ onOpenConsultation }) {
           )}
         </div>
 
-        {/* Row 2: 4 Cards matching Figma */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mt-6">
+        {/* Row 2: 4 Cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7 mt-8">
           {WORKS_ROW_2.map((w) => (
             <div
               key={w.title}
               onClick={() => onOpenConsultation?.(`Презентация объекта: ${w.title}`)}
-              className="group relative h-60 sm:h-64 rounded-2xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl transition-all duration-300 border border-light-border"
+              className="group relative h-64 sm:h-72 rounded-3xl overflow-hidden cursor-pointer shadow-[0_6px_25px_rgba(0,0,0,0.04)] hover:shadow-xl transition-all duration-500 border border-[#E5E1D8]"
             >
               <img
                 src={assetUrl(w.img)}
@@ -139,17 +139,17 @@ export default function Portfolio({ onOpenConsultation }) {
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
-              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
+              <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between">
                 <div>
-                  <h3 className="text-white font-bold text-sm sm:text-[15px] group-hover:text-stone transition-colors leading-snug">
+                  <h3 className="text-white font-bold text-base sm:text-lg group-hover:text-stone-200 transition-colors leading-snug">
                     {w.title}
                   </h3>
-                  <p className="text-stone/85 text-[11px] mt-1">
+                  <p className="text-stone-300/90 text-xs mt-1">
                     {w.meta}
                   </p>
                 </div>
-                <div className="w-7 h-7 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-bronze transition-colors shrink-0">
-                  <ArrowUpRight size={13} />
+                <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white group-hover:bg-[#8B7150] transition-colors shrink-0">
+                  <ArrowUpRight size={15} />
                 </div>
               </div>
             </div>
@@ -157,15 +157,15 @@ export default function Portfolio({ onOpenConsultation }) {
         </div>
 
         {/* Bottom Presentation Request Strip */}
-        <div className="mt-8 p-5 sm:p-6 bg-white rounded-xl border border-light-border shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <p className="text-forest-dark text-xs sm:text-sm font-medium">
+        <div className="mt-10 p-6 sm:p-7 bg-white rounded-2xl border border-[#E5E1D8] shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <p className="text-[#1E2824] text-xs sm:text-sm font-medium">
             Фасады, планировки и инженерные решения — соберем подробную презентацию выбранного проекта.
           </p>
           <button
             onClick={() => onOpenConsultation?.("Запрос презентации проекта")}
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-bronze text-white text-xs sm:text-[13px] font-bold rounded-lg hover:bg-bronze-light transition-all shadow shrink-0 cursor-pointer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#8B7150] hover:bg-[#9E825E] text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow shrink-0 cursor-pointer"
           >
-            Запросить презентацию <ArrowUpRight size={15} />
+            Запросить презентацию <ArrowUpRight size={16} />
           </button>
         </div>
       </div>
