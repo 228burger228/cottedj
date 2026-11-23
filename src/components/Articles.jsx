@@ -3,68 +3,84 @@ import { assetUrl } from '../utils';
 
 const ARTICLES = [
   {
-    category: 'Фундамент',
-    time: '7 минут',
+    category: 'ФУНДАМЕНТ',
+    time: '7 МИНУТ',
     title: 'Монолитная плита vs Свайно-ростверковый фундамент: что выбрать на пучинистом грунте?',
     img: '/images/Иллюстрация статьи.png',
   },
   {
-    category: 'Материалы',
-    time: '6 минут',
+    category: 'МАТЕРИАЛЫ',
+    time: '6 МИНУТ',
     title: 'Керамоблок или газобетон: сравнение теплоемкости, усадки и итоговой стоимости дома',
     img: '/images/image 4.png',
   },
   {
-    category: 'Технологии',
-    time: '5 минут',
+    category: 'ТЕХНОЛОГИИ',
+    time: '5 МИНУТ',
     title: '5 ошибок в устройстве плоской кровли в климате средней полосы России',
     img: '/images/image 5.png',
   },
 ];
 
-export default function Articles() {
+export default function Articles({ onOpenArticle, onOpenConsultation }) {
   return (
-    <section id="articles" className="py-16 md:py-24 bg-white">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
-        <div className="flex items-end justify-between gap-4 flex-wrap">
+    <section id="articles" className="py-20 sm:py-28 bg-white">
+      <div className="max-w-[1600px] mx-auto px-5 sm:px-10 lg:px-20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-sage mb-3">Полезные материалы</p>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-forest-dark leading-tight">
+            <p className="text-xs font-bold uppercase tracking-widest text-bronze mb-2.5">
+              ПОЛЕЗНЫЕ МАТЕРИАЛЫ
+            </p>
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-forest-dark leading-tight">
               Разбираемся в строительстве вместе
             </h2>
           </div>
-          <a
-            href="#"
-            className="inline-flex items-center gap-1.5 text-sm font-semibold text-bronze hover:text-bronze-light transition-colors shrink-0"
+          <button
+            onClick={() => onOpenConsultation?.("Подписка на инженерные статьи")}
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-bronze hover:text-forest transition-colors shrink-0 cursor-pointer"
           >
             Все статьи <ArrowUpRight size={16} />
-          </a>
+          </button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-10 md:mt-14">
+        {/* 3 Articles Grid */}
+        <div className="grid md:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16">
           {ARTICLES.map((a) => (
-            <article key={a.title} className="bg-cream rounded-2xl overflow-hidden group cursor-pointer">
-              <div className="h-44 md:h-48 overflow-hidden">
+            <article
+              key={a.title}
+              onClick={() => onOpenArticle?.(a)}
+              className="bg-[#F9F9F7] rounded-2xl overflow-hidden border border-light-border shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer"
+            >
+              <div className="h-48 sm:h-52 overflow-hidden relative">
                 <img
                   src={assetUrl(a.img)}
                   alt={a.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
-              <div className="p-5 md:p-6">
-                <div className="flex items-center gap-3 text-xs text-sage">
-                  <span className="font-semibold uppercase tracking-wider text-bronze">{a.category}</span>
-                  <span className="flex items-center gap-1">
-                    <Clock size={12} />
-                    {a.time}
+
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-3 text-xs text-sage">
+                    <span className="font-bold uppercase tracking-wider text-bronze">
+                      {a.category}
+                    </span>
+                    <span>/</span>
+                    <span className="flex items-center gap-1 font-medium">
+                      <Clock size={12} /> {a.time}
+                    </span>
+                  </div>
+
+                  <h3 className="text-base sm:text-lg font-bold text-forest-dark mt-3 leading-snug group-hover:text-bronze transition-colors">
+                    {a.title}
+                  </h3>
+                </div>
+
+                <div className="pt-6 mt-6 border-t border-light-border/60">
+                  <span className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-bronze group-hover:text-forest transition-colors">
+                    Читать материал <ArrowUpRight size={14} />
                   </span>
                 </div>
-                <h3 className="text-forest-dark font-bold text-sm md:text-[15px] mt-3 leading-snug group-hover:text-forest transition-colors">
-                  {a.title}
-                </h3>
-                <span className="inline-flex items-center gap-1 mt-4 text-[13px] font-semibold text-bronze group-hover:text-bronze-light transition-colors">
-                  Читать материал <ArrowUpRight size={14} />
-                </span>
               </div>
             </article>
           ))}

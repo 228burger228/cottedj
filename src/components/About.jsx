@@ -9,50 +9,77 @@ const FACTS = [
 
 export default function About() {
   return (
-    <section id="about" className="py-16 md:py-24 bg-cream">
-      <div className="max-w-[1400px] mx-auto px-5 md:px-10">
-        <p className="text-xs font-semibold uppercase tracking-widest text-sage mb-3">О компании</p>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-forest-dark leading-tight max-w-lg">
+    <section id="about" className="py-20 sm:py-28 bg-[#F9F9F7]">
+      <div className="max-w-[1600px] mx-auto px-5 sm:px-10 lg:px-20">
+        <p className="text-xs font-bold uppercase tracking-widest text-bronze mb-2.5">
+          О КОМПАНИИ
+        </p>
+        <h2 className="text-2xl sm:text-4xl font-extrabold text-forest-dark leading-tight max-w-2xl">
           Свой дом начинается с надежной команды
         </h2>
-        <p className="text-sage mt-4 max-w-lg text-[15px] leading-relaxed">
+        <p className="text-sage mt-3.5 max-w-xl text-sm sm:text-[15px] leading-relaxed">
           Собственная производственная база, техника и люди, которые отвечают за результат лично.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-10 md:mt-14">
+        {/* 4 Cards Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 mt-12 sm:mt-16">
           {FACTS.map((f) => (
-            <div key={f.num} className="bg-white rounded-xl p-6 border border-light-border">
-              <span className="text-bronze font-bold text-sm">{f.num}</span>
-              <h3 className="text-forest-dark font-bold text-[15px] mt-3 leading-snug">{f.title}</h3>
-              <p className="text-sage text-[13px] mt-2 leading-relaxed">{f.desc}</p>
+            <div
+              key={f.num}
+              className="bg-white rounded-2xl p-6 sm:p-7 border border-light-border shadow-sm hover:shadow-md transition-all hover:-translate-y-1"
+            >
+              <span className="text-bronze font-black text-xl tracking-wider block">
+                {f.num}
+              </span>
+              <h3 className="text-forest-dark font-bold text-base mt-3 leading-snug">
+                {f.title}
+              </h3>
+              <p className="text-sage text-xs sm:text-[13px] mt-2 leading-relaxed">
+                {f.desc}
+              </p>
             </div>
           ))}
         </div>
 
-        {/* Production strip */}
-        <div className="mt-10 md:mt-14 grid md:grid-cols-2 gap-6">
-          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+        {/* 2 Wide Production Photos */}
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mt-10 sm:mt-12">
+          <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md group border border-light-border">
             <img
               src={assetUrl('/images/Фото · Комплексная застройка поселка.png')}
-              alt="Комплексная застройка"
-              className="w-full h-full object-cover"
+              alt="Комплексная застройка поселка"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            <div className="absolute bottom-5 left-5">
-              <p className="text-white font-bold text-sm uppercase tracking-wider">Своя техника. Свой контроль.</p>
-              <p className="text-white/80 text-xs mt-1">Никаких случайных бригад и скрытых подрядчиков</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <span className="text-xs uppercase tracking-widest text-bronze font-bold block mb-1">
+                Генеральный подряд
+              </span>
+              <p className="text-white font-extrabold text-lg sm:text-xl leading-snug">
+                Своя техника. Свой контроль.
+              </p>
+              <p className="text-white/80 text-xs sm:text-sm mt-1">
+                Никаких случайных бригад и скрытых субподрядчиков
+              </p>
             </div>
           </div>
-          <div className="relative h-64 md:h-80 rounded-2xl overflow-hidden">
+
+          <div className="relative h-72 sm:h-96 rounded-2xl overflow-hidden shadow-md group border border-light-border">
             <img
               src={assetUrl('/images/Фото · Собственный склад материалов.png')}
-              alt="Собственный склад"
-              className="w-full h-full object-cover"
+              alt="Собственный склад материалов"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-            <div className="absolute bottom-5 left-5">
-              <p className="text-white font-bold text-sm uppercase tracking-wider">Собственный склад материалов</p>
-              <p className="text-white/80 text-xs mt-1">Сухое охраняемое хранение, доставка длинномерами</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+            <div className="absolute bottom-6 left-6 right-6">
+              <span className="text-xs uppercase tracking-widest text-bronze font-bold block mb-1">
+                Логистика и снабжение
+              </span>
+              <p className="text-white font-extrabold text-lg sm:text-xl leading-snug">
+                Собственный склад материалов
+              </p>
+              <p className="text-white/80 text-xs sm:text-sm mt-1">
+                Сухое охраняемое хранение, доставка длинномерами и манипуляторами
+              </p>
             </div>
           </div>
         </div>
