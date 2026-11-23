@@ -38,10 +38,10 @@ export default function Hero({ onOpenConsultation }) {
           <div className="mt-8 sm:mt-12 flex flex-wrap items-center gap-4">
             <button
               onClick={() => onOpenConsultation?.("Обсудить строительство коттеджа")}
-              className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-4.5 bg-[#8B7150] hover:bg-[#9E825E] text-white text-sm sm:text-[15px] font-bold rounded-2xl transition-all duration-300 shadow-[0_12px_32px_rgba(139,113,80,0.4)] hover:shadow-[0_16px_45px_rgba(139,113,80,0.6)] transform hover:-translate-y-0.5 cursor-pointer group"
+              className="inline-flex items-center gap-3 px-8 sm:px-10 py-4 sm:py-5 bg-bronze hover:bg-bronze-light text-white text-sm sm:text-base font-bold rounded-2xl transition-all duration-300 shadow-[0_12px_32px_rgba(139,113,80,0.4)] hover:shadow-[0_16px_45px_rgba(139,113,80,0.6)] transform hover:-translate-y-0.5 cursor-pointer group"
             >
               <span>Обсудить строительство</span>
-              <ArrowUpRight size={19} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <ArrowUpRight size={20} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </button>
           </div>
         </div>
