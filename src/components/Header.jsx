@@ -47,12 +47,12 @@ export default function Header({ onOpenConsultation }) {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden xl:flex items-center gap-7 2xl:gap-8">
+        <nav className="hidden xl:flex items-center gap-5 2xl:gap-7">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[13px] font-medium text-[#1E2824]/85 hover:text-[#8B7150] transition-colors relative py-1"
+              className="text-[13px] font-medium text-[#1E2824]/85 hover:text-[#8B7150] transition-colors relative py-1 whitespace-nowrap"
             >
               {link.label}
             </a>
